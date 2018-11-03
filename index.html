@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <title>You Don't Need an Unfun Website</title>
+    <meta name="description" content="" />
+    <style>
+      body {
+        margin: 0;
+      }
+      .presentation {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+      .screen {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+      }
+
+      .title {
+        position: absolute;
+        left: 50%;
+        top: 33%;
+        transform: translateX(-50%);
+        font-size: 5vw;
+        white-space: nowrap;
+      }
+      .names {
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        transform: translateX(-50%);
+        font-size: 2vw;
+      }
+      .name {
+        white-space: nowrap;
+      }
+      .wolfgang {
+        margin-right: 10vw;
+      }
+
+      .websites {
+        position: absolute;
+        left: 50%;
+        top: 25%;
+        transform: translateX(-50%);
+      }
+      .websites td {
+        padding: 4vw 4vw;
+      }
+      .website {
+        font-size: 2vw;
+      }
+
+      .unfun {
+        position: absolute;
+        left: 50%;
+        top: 33%;
+        transform: translateX(-50%);
+        font-size: 5vw;
+      }
+      .unfun a {
+        text-decoration: none;
+      }
+      .presentation-link {
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        transform: translateX(-50%);
+        font-size: 2vw;
+      }
+
+    </style>
+  </head>
+  <body>
+    <ul class="presentation">
+
+      <li class="screen">
+        <h1 class="title">You Don't Need an Unfun Website</h1>
+        <div class="names">
+          <span class="name wolfgang"><a href="mailto:wolfgang@unfun.de">Wolfgang Schöffel</a></span>
+          <span class="name emanuel"><a href="mailto:emanuel@unfun.de">Emanuel Tannert</a></span>
+        </div>
+      </li>
+
+      <li class="screen">
+        <table class="websites">
+          <tr class="website modest">
+            <td>
+              <a href="https://modest-laytheme.unfun.de/">modest laytheme site</a>
+            </td>
+            <td>
+              <a href="https://modestdepartment.com/">modestdepartment.com</a>
+            </td>
+          </tr>
+          <tr class="website ifz">
+            <td>
+              <a href="https://ifz-laytheme.unfun.de/">ifz laytheme site</a>
+            </td>
+            <td>
+              <a href="https://ifz.me/">ifz.me</a>
+            </td>
+          </tr>
+          <tr class="website zbau">
+            <td>
+              <a href="https://zbau-laytheme.unfun.de/">z-bau laytheme site</a>
+            </td>
+            <td>
+              <a href="https://z-bau.com/">z-bau.com</a>
+            </td>
+          </tr>
+        </ul>
+      </table>
+
+      <li class="screen">
+        <h2 class="unfun"><a href="https://unfun.de/">unfun.de</a></h2>
+        <div class="presentation-link">
+          <a href="https://em4nl.github.io/simdd-2018-presentation/">em4nl.github.io/simdd-2018-presentation</a>
+        </div>
+      </li>
+
+    </ul>
+    <script>
+      (function() {
+        'use strict';
+        var screens = document.querySelectorAll('.screen');
+        function move(forward) {
+          var distance = null;
+          var i = forward ? 0 : screens.length - 1;
+          while (forward ? i < screens.length : i >= 0) {
+            distance = screens[i].getBoundingClientRect().top;
+            if (forward ? distance > 0 : distance < 0) break;
+            distance = null;
+            if (forward) i++;
+            else i--;
+          }
+          if (distance !== null) {
+            var scrollPos = window.pageYOffset;
+            window.scrollTo(0, scrollPos + distance);
+          }
+        }
+        window.addEventListener('keydown', function(event) {
+          if ([32, 39, 40, 74, 76].indexOf(event.keyCode) > -1) {
+            event.preventDefault();
+            move(true);
+          } else if ([37, 38, 72, 75].indexOf(event.keyCode) > -1) {
+            event.preventDefault();
+            move();
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
