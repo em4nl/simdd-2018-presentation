@@ -6,12 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no" />
 
-    <title>You Don't Need an Unfun Website</title>
+    <title>You Don’t Need an Unfun Website</title>
     <meta name="description" content="" />
     <style>
+
+      @font-face {
+        font-family: 'Neue Haas';
+        src: url('fonts/neue-haas-regular.woff') format('woff');
+        font-weight: bold;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Neue Haas';
+        src: url('fonts/neue-haas-extra-light.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+      }
+
       body {
         margin: 0;
+        background: rgb(242, 53, 1);
+        font-family: 'Neue Haas', sans-serif;
+        color: rgb(25, 25, 25);
+        letter-spacing: 0.03em;
       }
+
+      a {
+        color: rgb(25, 25, 25);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+      }
+
+      h1, h2, h3 {
+        font-weight: normal;
+      }
+
       .presentation {
         margin: 0;
         padding: 0;
@@ -28,7 +58,7 @@
         left: 50%;
         top: 33%;
         transform: translateX(-50%);
-        font-size: 5vw;
+        font-size: 6vw;
         white-space: nowrap;
       }
       .names {
@@ -45,16 +75,12 @@
         margin-right: 10vw;
       }
 
-      .websites {
-        position: absolute;
-        left: 50%;
-        top: 25%;
-        transform: translateX(-50%);
-      }
-      .websites td {
-        padding: 4vw 4vw;
-      }
       .website {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: 2vw;
       }
 
@@ -66,7 +92,7 @@
         font-size: 5vw;
       }
       .unfun a {
-        text-decoration: none;
+        border-bottom: none;
       }
       .presentation-link {
         position: absolute;
@@ -82,7 +108,7 @@
     <ul class="presentation">
 
       <li class="screen">
-        <h1 class="title">You Don't Need an Unfun Website</h1>
+        <h1 class="title">You Don’t Need an Unfun Website</h1>
         <div class="names">
           <span class="name wolfgang"><a href="mailto:wolfgang@unfun.de">Wolfgang Schöffel</a></span>
           <span class="name emanuel"><a href="mailto:emanuel@unfun.de">Emanuel Tannert</a></span>
@@ -90,33 +116,22 @@
       </li>
 
       <li class="screen">
-        <table class="websites">
-          <tr class="website modest">
-            <td>
-              <a href="https://modest-laytheme.unfun.de/">modest laytheme site</a>
-            </td>
-            <td>
-              <a href="https://modestdepartment.com/">modestdepartment.com</a>
-            </td>
-          </tr>
-          <tr class="website ifz">
-            <td>
-              <a href="https://ifz-laytheme.unfun.de/">ifz laytheme site</a>
-            </td>
-            <td>
-              <a href="https://ifz.me/">ifz.me</a>
-            </td>
-          </tr>
-          <tr class="website zbau">
-            <td>
-              <a href="https://zbau-laytheme.unfun.de/">z-bau laytheme site</a>
-            </td>
-            <td>
-              <a href="https://z-bau.com/">z-bau.com</a>
-            </td>
-          </tr>
-        </ul>
-      </table>
+        <div class="website">
+          <a href="https://modestdepartment.com/">modestdepartment.com</a>
+        </div> 
+      </li>
+      
+      <li class="screen">
+        <div class="website">
+          <a href="https://ifz.me/">ifz.me</a>
+        </div>
+      </li>
+
+      <li class="screen">
+        <div class="website">
+          <a href="https://z-bau.com/">z-bau.com</a>
+        </div>
+      </li>
 
       <li class="screen">
         <h2 class="unfun"><a href="https://unfun.de/">unfun.de</a></h2>
